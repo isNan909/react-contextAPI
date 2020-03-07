@@ -11,9 +11,17 @@ const initialState = {
 
 export const GlobalContext = createContext(initialState);
 export const GlobalProvider = ({ children }) => {
-    const [state] = useReducer(AppReducer, initialState);
+    const [state, dispatch] = useReducer(AppReducer, initialState);
+
+    function removeEmployee(id) {
+        dispatch({
+            type: 'REMOVE_EMPLOYEE',
+            payload: id
+        });
+    }
     return (<GlobalContext.Provider value={{
         employees: state.employees,
+        removeEmployee
     }}>
         {children}
     </GlobalContext.Provider>);
