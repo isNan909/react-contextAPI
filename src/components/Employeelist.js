@@ -1,13 +1,17 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
 
 export const Employeelist = () => {
+    const obj = useContext(GlobalContext);
+    console.log(obj);
     return (
         <Fragment>
             <div className="flex items-center bg-gray-100 shadow">
                 <div className="flex-auto text-left px-4 py-2 m-2">
                     <p className="text-gray-900 leading-none">Jonathan Reinink</p>
-                    <span className="inline-block bg-gray-200 rounded-full mt-2 px-3 py-1 text-sm font-semibold text-gray-700">New York</span>
-                    <p className="text-gray-600 mt-3">Software Engineer</p>
+                    <p className="text-gray-600">Software Engineer</p>
+                    <span className="inline-block text-sm font-semibold mt-1">New York</span>
+
                 </div>
                 <div className="flex-auto text-right px-4 py-2 m-2">
                     <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold mr-3 py-2 px-4 rounded-full inline-flex items-center">

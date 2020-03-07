@@ -4,14 +4,16 @@ import './stylesheet/styles.css';
 import { Home } from './components/Home';
 import { Employeeform } from './components/Employeeform';
 
+import { GlobalProvider } from './context/GlobalState';
+
 function App() {
   return (
-    <main>
+    <GlobalProvider>
       <Switch>
         <Route path="/" component={Home} exact />
-        <Route path="/emplyoee-form" component={Employeeform} exact />
+        <Route path="/add" component={Employeeform} exact />
       </Switch>
-    </main>
+    </GlobalProvider>
   );
 }
 
