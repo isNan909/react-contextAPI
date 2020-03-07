@@ -5,7 +5,7 @@ const initialState = {
     employees: [
         { id: 1, name: 'John Doe', location: 'California', designation: 'Product Designer' },
         { id: 2, name: 'Alfred Hanball', location: 'Warsaw', designation: 'Frontend Engineer' },
-        { id: 3, name: 'Ishan Manandhar', location: 'Kathmandu', designation: 'Fullstack Dev' }
+        { id: 3, name: 'Ishan Manandhar', location: 'Kathmandu', designation: 'Frontend Dev' }
     ]
 }
 
