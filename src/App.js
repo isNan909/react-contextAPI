@@ -1,14 +1,17 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './stylesheet/styles.css';
+import { Home } from './components/Home';
+import { Employeeform } from './components/Employeeform';
 
 function App() {
   return (
-    <div className="App">
-      <div className="container mx-auto">
-        <h3 className="text-center  text-2xl mt-20 text-base leading-8 text-indigo-600 font-semibold tracking-wide uppercase">CRUD Application with Context API</h3>
-        {/* other subcomponents stays here  */}
-      </div>
-    </div>
+    <main>
+      <Switch>
+        <Route path="/" component={Home} exact />
+        <Route path="/emplyoee-form" component={Employeeform} exact />
+      </Switch>
+    </main>
   );
 }
 
