@@ -8,8 +8,13 @@ export default (state, action) => {
         case 'ADD_EMPLOYEE':
             return {
                 ...state,
-                employees: [...state.employees, action.payload]
-            }
+                employees: [action.payload, ...state.employees]
+            };
+        case 'EDIT_EMPLOYEE':
+            return {
+                ...state,
+                employees: state.employees.filter(employee => employee.id !== action.payload)
+            };
         default: return state;
     }
 }

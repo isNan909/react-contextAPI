@@ -5,17 +5,20 @@ export const Employeeform = () => {
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
     const [designation, setDesignation] = useState('');
-    const { addEmployee } = useContext(GlobalContext);
+    const { addEmployee, employees } = useContext(GlobalContext);
 
     const onSubmit = e => {
         e.preventDefault();
         const newEmployee = {
-            id: Math.floor(Math.random() * 10000000),
+            id: employees.length + 1,
             name,
             location,
             designation
         }
+        console.log(newEmployee);
         addEmployee(newEmployee);
+        //update list
+        //redirect to /home
     }
 
     return (

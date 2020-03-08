@@ -3,7 +3,7 @@ import AppReducer from './AppReducer'
 
 const initialState = {
     employees: [
-        { id: 3, name: 'Ishan Manandhar', location: 'Kathmandu', designation: 'Frontend Dev' }
+        { id: 1, name: 'Ishan Manandhar', location: 'Kathmandu', designation: 'Frontend Dev' }
     ]
 }
 
@@ -16,18 +16,28 @@ export const GlobalProvider = ({ children }) => {
             type: 'REMOVE_EMPLOYEE',
             payload: id
         });
-    }
+    };
 
-    function addEmployee(employee) {
+    function addEmployee(employees) {
         dispatch({
             type: 'ADD_EMPLOYEES',
-            payload: employee
+            payload: employees
         });
-    }
+    };
+
+    function editEmployee(id) {
+        console.log(id)
+        dispatch({
+            type: 'EDIT_EMPLOYEE',
+            payload: id
+        });
+    };
+
     return (<GlobalContext.Provider value={{
         employees: state.employees,
         removeEmployee,
-        addEmployee
+        addEmployee,
+        editEmployee
     }}>
         {children}
     </GlobalContext.Provider>);
