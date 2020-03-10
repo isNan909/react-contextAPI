@@ -1,11 +1,13 @@
 import React, { Fragment, useState, useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
+import { useHistory } from "react-router-dom";
 
-export const Employeeform = () => {
+export const Addemployee = () => {
     const [name, setName] = useState('');
     const [location, setLocation] = useState('');
     const [designation, setDesignation] = useState('');
     const { addEmployee, employees } = useContext(GlobalContext);
+    let history = useHistory();
 
     const onSubmit = e => {
         e.preventDefault();
@@ -17,8 +19,8 @@ export const Employeeform = () => {
         }
         console.log(newEmployee);
         addEmployee(newEmployee);
+        history.push("/");
         //update list
-        //redirect to /home
     }
 
     return (

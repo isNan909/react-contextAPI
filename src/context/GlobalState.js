@@ -26,7 +26,7 @@ export const GlobalProvider = ({ children }) => {
     };
 
     function editEmployee(id) {
-        console.log(id)
+        // console.log(id)
         dispatch({
             type: 'EDIT_EMPLOYEE',
             payload: id
