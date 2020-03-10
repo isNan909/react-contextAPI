@@ -5,7 +5,9 @@ export default (state, action) => {
                 ...state,
                 employees: state.employees.filter(employee => employee.id !== action.payload)
             };
-        case 'ADD_EMPLOYEE':
+        case 'ADD_EMPLOYEES':
+            console.log({ p: action.payload })
+
             return {
                 ...state,
                 employees: [action.payload, ...state.employees]

@@ -17,10 +17,8 @@ export const Addemployee = () => {
             location,
             designation
         }
-        console.log(newEmployee);
         addEmployee(newEmployee);
         history.push("/");
-        //update list
     }
 
     return (

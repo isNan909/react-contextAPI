@@ -12,9 +12,12 @@ export const Editemployee = (route) => {
     const onSubmit = e => {
         e.preventDefault();
         console.log(employees);
-        const routeId = route.match.params.id;
-        const Id = employees.filter(x => x.id === routeId);
-        console.log(routeId, Id)
+        const employeeId = route.match.params.id;
+        const Id = employees.filter(x => {
+            console.log({ test: e })
+            return x.id === employeeId;
+        });
+        console.log(Id)
         //update list
         //redirect to /home
         history.push('/');
