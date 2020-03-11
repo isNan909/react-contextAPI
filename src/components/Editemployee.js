@@ -3,30 +3,19 @@ import { GlobalContext } from '../context/GlobalState';
 import { useHistory, Link } from "react-router-dom";
 
 export const Editemployee = (route) => {
-    const [setName] = useState('');
-    const [setLocation] = useState('');
-    const [setDesignation] = useState('');
+    const [name, setName] = useState('');
+    const [location, setLocation] = useState('');
+    const [designation, setDesignation] = useState('');
     const { employees } = useContext(GlobalContext);
-    // const [e] = employees;
-    const employeeId = route.match.params.id;
-
-    const [currentEmployee] = employees.filter(x => {
-        return x.id === parseInt(employeeId);
-    });
-
-    const {
-        name,
-        location,
-        designation
-    } = currentEmployee;
-
     let history = useHistory();
 
-    // const [e] = state;
-
-    // console.log(e);
-
-    useEffect(() => console.log('mounted'), []);
+    useEffect(() => {
+        const employeeId = route.match.params.id;
+        const currentId = employees.filter(x => {
+            return x.id === parseInt(employeeId);
+        });
+        console.log(currentId);
+    });
 
     const onSubmit = e => {
         e.preventDefault();
