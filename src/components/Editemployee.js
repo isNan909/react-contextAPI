@@ -47,7 +47,7 @@ export const Editemployee = (route) => {
                         <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:text-gray-600 focus:shadow-outline" value={designation} onChange={(e) => setDesignation(e.target.value)} type="text" placeholder="Enter designation" />
                     </div>
                     <div className="flex items-center justify-between">
-                        <button className="block mt-5 bg-green-400 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
+                        <button className="block mt-5 bg-green-400 w-full hover:bg-green-500 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
                             Edit Employee
                         </button>
                     </div>

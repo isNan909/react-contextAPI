@@ -27,7 +27,7 @@ export const Employeelist = () => {
                         </div>
                     </div>
                 ))}
-            </Fragment> : <p className="text-center text-red-400">No data</p>}
+            </Fragment> : <p className="text-center bg-gray-100 text-gray-500 py-5">No data</p>}
         </Fragment>
     )
 }
