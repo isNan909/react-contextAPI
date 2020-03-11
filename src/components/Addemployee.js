@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export const Addemployee = () => {
     const [name, setName] = useState('');
@@ -48,6 +49,7 @@ export const Addemployee = () => {
                             Done
                         </button>
                     </div>
+                    <div className="text-center mt-4"><Link to='/'>Cancel</Link></div>
                 </form>
             </div>
         </Fragment>

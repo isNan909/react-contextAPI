@@ -1,22 +1,35 @@
-import React, { Fragment, useState, useContext } from 'react';
+import React, { Fragment, useState, useContext, useEffect } from 'react';
 import { GlobalContext } from '../context/GlobalState';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 export const Editemployee = (route) => {
-    const [name, setName] = useState('');
-    const [location, setLocation] = useState('');
-    const [designation, setDesignation] = useState('');
+    const [setName] = useState('');
+    const [setLocation] = useState('');
+    const [setDesignation] = useState('');
     const { employees } = useContext(GlobalContext);
+    // const [e] = employees;
+    const employeeId = route.match.params.id;
+
+    const [currentEmployee] = employees.filter(x => {
+        return x.id === parseInt(employeeId);
+    });
+
+    const {
+        name,
+        location,
+        designation
+    } = currentEmployee;
+
     let history = useHistory();
+
+    // const [e] = state;
+
+    // console.log(e);
+
+    useEffect(() => console.log('mounted'), []);
 
     const onSubmit = e => {
         e.preventDefault();
-        console.log(employees);
-        const employeeId = route.match.params.id;
-        const Id = employees.filter(x => {
-            return x.id === employeeId;
-        });
-        console.log(Id)
         //update list
         //redirect to /home
         history.push('/');
@@ -45,10 +58,11 @@ export const Editemployee = (route) => {
                         <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:text-gray-600 focus:shadow-outline" value={designation} onChange={(e) => setDesignation(e.target.value)} type="text" placeholder="Enter designation" />
                     </div>
                     <div className="flex items-center justify-between">
-                        <button className="mt-5 bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
+                        <button className="block mt-5 bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:text-gray-600 focus:shadow-outline">
                             Done
                         </button>
                     </div>
+                    <div className="text-center mt-4"><Link to='/'>Cancel</Link></div>
                 </form>
             </div>
         </Fragment>
