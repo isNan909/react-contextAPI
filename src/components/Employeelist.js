@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 export const Employeelist = () => {
     const { employees, removeEmployee, editEmployee } = useContext(GlobalContext);
-    // console.log(employees);
     return (
         <Fragment>
             {employees.length > 0 ? <Fragment>

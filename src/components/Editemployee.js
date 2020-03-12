@@ -3,17 +3,16 @@ import { GlobalContext } from '../context/GlobalState';
 import { useHistory, Link } from "react-router-dom";
 
 export const Editemployee = (route) => {
-    const { employees, editEmployee } = useContext(GlobalContext);
     let history = useHistory();
-
+    const { employees, editEmployee } = useContext(GlobalContext);
     const [selectedUser, setSeletedUser] = useState({ id: null, name: '', designation: '', location: '' });
     const currentUserId = route.match.params.id;
 
     useEffect(() => {
         const employeeId = currentUserId;
         const selectedUser = employees.find(emp => emp.id === parseInt(employeeId));
-
         setSeletedUser(selectedUser);
+        // eslint-disable-next-line
     }, []);
 
     const onSubmit = e => {
