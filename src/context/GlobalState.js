@@ -25,10 +25,10 @@ export const GlobalProvider = ({ children }) => {
         });
     };
 
-    function editEmployee(id) {
+    function editEmployee(employees) {
         dispatch({
             type: 'EDIT_EMPLOYEE',
-            payload: id
+            payload: employees
         });
     };
 
