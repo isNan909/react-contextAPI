@@ -17,7 +17,6 @@ export default (state, action) => {
                 if (employee.id === updatedEmployee.id) {
                     return updatedEmployee;
                 }
-
                 return employee;
             });
 
